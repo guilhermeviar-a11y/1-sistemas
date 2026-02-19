@@ -1,0 +1,22 @@
+<html>  
+    <style> 
+        body{
+            background-color:red;
+            background-image:url("");
+            background-size:100%;
+            background-repeat:no-repeat;
+    }
+    div{
+        background-color:black;
+        width:40%;
+        height:80px;
+        color:white;
+        margin-left:10%;
+    }
+</style> 
+<body>
+    <div>
+    <p>Meu primeiro site com div</p>
+    </div>
+    </body>
+    </html>
