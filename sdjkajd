@@ -1,0 +1,38 @@
+<html>
+    <style>
+        body{
+            background-color:white;
+            background-image:url("");
+            background-size:10;
+            background-repeat:no-repeat;
+        }
+        div{
+            background-color:black;
+            width:1000%;
+            height:1000px;
+            color:white;
+            margin-left:10%;
+        }
+        #black{
+            background-color:black;
+        }
+        #branco{
+            background-color:white;
+        }
+        #vermelho{
+            background-color:red;
+        }
+        
+        <img src="Flag_of_Germany_(1935–1945)"
+    </style>
+    <body>
+        <div>
+            <p>Meu primeiro site com div</p>
+        </div>
+        <div id="preto"></div>
+                <div id="branco"></div>
+                        <div id="vermelho"></div>
+                        <div>  
+        <img src="Flag_of_Germany_(1935–1945)"</div>
+    </body>
+</html>js
