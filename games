@@ -1,0 +1,78 @@
+programa {
+  inclua biblioteca Util --> u
+
+  funcao inicio() {
+    inteiro dano, heal
+    inteiro hpp = 100
+    inteiro hpboss = 200
+    cadeia nome 
+    inteiro opc, opcao
+    inteiro mochila[] = {2, 3, 1} 
+
+    escreva("rpg seco\n")
+    escreva("escreva seu nome: ")
+    leia(nome)
+    escreva("bemvindo, ", nome, "\n")
+
+    escreva("digite '1' para continuar ou '0' para sair: ")
+    leia(opc)
+
+    se (opc != 1){
+      escreva("\nfraco.\n")
+      retorne
+    }
+
+    enquanto (hpp > 0 e hpboss > 0) {
+      escreva("\n%%%%%%%%%%%%%%%%%%%%%%%")
+      escreva("\nsua vida: ", hpp, " | vida do dragao: ", hpboss)
+      escreva("\nmochila: ", mochila[0], " bombas | ", mochila[1], " curas")
+      escreva("\n1  atacar = espada")
+      escreva("\n2  usar cura")
+      escreva("\n3 jogar bomba")
+      escreva("\nescolha: ")
+      leia(opcao)
+
+      escolha(opcao) {
+        caso 1:
+          dano = u.sorteia(10, 20) * mochila[2]
+          hpboss -= dano
+          escreva("\nvoce causou ", dano, " de dano!")
+          pare
+        
+        caso 2:
+          se (mochila[1] > 0) {
+            heal = u.sorteia(15, 30)
+            hpp += heal
+            mochila[1]--
+            escreva("\nvoce curou ", heal, " de vida! restam ", mochila[1])
+          } senao {
+            escreva("\nsem itens heal")
+          }
+          pare
+
+        caso 3:
+          se (mochila[0] > 0) {
+            dano = u.sorteia(40, 50)
+            hpboss - dano
+            mochila[0]--
+            escreva("\ngap da c4, a bomba tirou ", dano, " do dragao!")
+          } senao {
+            escreva("\ngap de itens")
+          }
+          pare
+      }
+
+      se (hpboss > 0) {
+        dano = u.sorteia(10, 20)
+        hpp -= dano
+        escreva("\no dragao te deu ", dano, " de dano")
+      }
+    }
+
+    se (hpp <= 0) {
+      escreva("\n\n o dragao venceu")
+    } senao {
+      escreva("\n\ngap seco. o dragao deitou sem sono.")
+    }
+  }
+}
